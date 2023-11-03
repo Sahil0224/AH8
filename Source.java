@@ -11,6 +11,19 @@ class Node<T> {
   class Source {
     public static <T> boolean linkedListFind(Node<T> head, T target) {
       // todo
+
+    // while the head is not null
+    while(head != null)
+    {
+      // check if head's value equals to the target, if it is then return true
+      if(head.val.equals(target))
+      {
+        return true;
+      }
+      // call the method on the next node
+      head = head.next;
+    }
+    // otherwsie return false
       return false;
     }
     
@@ -27,6 +40,9 @@ class Node<T> {
         // a -> b -> c -> d
 
         System.out.println(Source.linkedListFind(a, "c"));
+
+        Node<Integer> node1 = new Node<>(42);
+        System.out.println(Source.linkedListFind(node1, 100));
         
     }
 
